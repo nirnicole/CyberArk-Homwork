@@ -1,0 +1,44 @@
+.flexbox-container{
+    display: flex;                  /*to make this container flex*/
+    flex-wrap: wrap;                /*to make item in a flex container overflow to next line*/
+    justify-content: center;        /*make items align to center*/
+    flex-direction: row;            /*"row": arange items by rows according to the order they apear in the html*/
+    align-content: stretch;         /*dont remember*/
+    max-width: 605px;
+    height: 300px;
+}
+
+.flexbox-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(172, 93, 170);
+    min-height: 100px;
+    font-size: 30px;
+}
+
+#item-1 {
+   width: 100%;
+   justify-content: center;
+   background-color: rgb(40, 199, 205);
+}
+
+#item-2 {
+    width: 148px;
+    min-height: 200px;
+}
+
+#item-3 {
+    width: 299px;
+    background-color: rgb(240, 150, 248);
+}
+
+#item-4 {
+    width: 149px;
+}
+
+#item-5 {
+    width: 100%;
+    background-color: rgb(40, 199, 205);
+}

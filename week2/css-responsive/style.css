@@ -1,0 +1,16 @@
+.text{
+    background-color: #f39c12;
+    /* max-width:500px; */
+    min-height: 50px;
+  }
+
+  @media(max-width: 1000px){
+    input{
+      display: block;
+    }
+    .text{
+        background-color: #9212f3;
+        max-width:500px;
+        min-height: 50px;
+      }
+  }

@@ -1,0 +1,108 @@
+body {
+    margin:0;
+}
+
+#container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 18fr 1fr;
+    grid-template-areas: 
+    "s m"
+    "s f";
+     
+}
+
+
+.side-nav{
+    grid-area: s;
+    background-color: rgb(146, 28, 146);
+
+}
+
+.foot{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 1fr;
+    grid-area: f;
+    background-color: white;
+
+}
+
+.main{
+    display: grid;
+    font-family: 'Merienda';
+    font-size: 22px;
+    grid-template-rows: repeat(5, 1fr);
+    grid-area: m;
+    background-color: rgb(201, 184, 184);
+    padding: 15px;
+    overflow: hidden;           /*added for future changes*/
+}
+
+
+.messageRecive {
+    display:inline-block;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 0; 
+    margin-right: auto;
+}
+
+.messageSent {
+    display:inline-block;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto; 
+    margin-right: 0;
+}
+
+.messageRecive > .msgContainer{
+    display: grid;
+    background-color: rgb(164, 202, 255);
+    border-radius: 5px;
+    width:fit-content; /* OR max-content OR min-content */
+    padding: 5px;
+    grid-template-areas: 
+    "s m"
+    "s f";
+}
+
+.messageSent > .msgContainer{
+    display: grid;
+    background-color: rgb(52, 192, 77);
+    border-radius: 5px;
+    width:fit-content; /* OR max-content OR min-content */
+    padding: 5px;
+    grid-template-areas: 
+    "s m"
+    "s f";
+
+}
+
+.msgConetnt {
+    display:inline-block;
+    grid-area: s;
+    padding: 2px;
+    padding-right: 15px;
+}
+.msgTime {
+    display:inline-block;
+    grid-area: f;
+    padding-left: 15px;
+    font-size: 15px;
+}
+
+button {
+    border: 0;
+    background-color: rgb(146, 28, 146);
+    color:white;
+}
+
+button:hover {
+    background-color: rgb(109, 0, 109);
+}
+
+text {
+    font: 7px sans-serif;
+}
