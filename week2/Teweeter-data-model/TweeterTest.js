@@ -4,8 +4,8 @@ const tweeterRendering = TweeterRender();
 tweeter.addPost("This is my own post!");
 tweeter.addPost("2 post");
 tweeter.addPost("3 post");
-tweeter.addPost("4 post");
-tweeter.addPost("5 post");
+tweeter.addPost("My fourth post");
+tweeter.addPost("Become A New York Times Subscriber Today!");
 console.log(tweeter.getPosts());
 
 tweeter.removePost("p2");

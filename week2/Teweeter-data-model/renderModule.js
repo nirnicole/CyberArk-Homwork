@@ -37,7 +37,7 @@ const createCommentElements = function(commentsArray){
 
     for(let comment of commentsArray){
 
-        let concatedComment = `<div class=delete>X</div>`
+        let concatedComment = `<div class=delete>delete</div>`
         concatedComment += `<div class=comment>${comment.text}</div>`
 
         concatedLines += `<div class=commentLine>${concatedComment}</div>`
