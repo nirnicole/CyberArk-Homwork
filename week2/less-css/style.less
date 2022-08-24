@@ -1,0 +1,49 @@
+// .data {
+//     input {
+//         color: orange;
+//     }
+// }
+
+// .data {
+//     button {
+//         font-weight: bold;
+//     }
+// }
+
+
+.form {
+    .sign-up-area {
+        .left {
+            button {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #9b59b6;
+    box-shadow: 1px 1px 3px #2c3e50;
+    border-radius: 4px;
+}
+
+.other-container {
+    &:extend(.box);
+    margin-top: 1vmax;
+}
+
+.box(@w, @h) {
+    width: @w;
+    height: @h;
+    background-color: #9b59b6;
+    box-shadow: 1px 1px 3px #2c3e50;
+    border-radius: 4px;
+}
+
+.other-container {
+    .box(50px, 50px);
+    margin-top: 1vmax;
+}
