@@ -43,7 +43,7 @@ body{
     border-radius: 5px;
     
     width: 500px;
-    height: 85px;
+    height: 76px;
     position: absolute;
     bottom: 100px;
     
@@ -58,7 +58,7 @@ body{
     text-align: center;
     margin:10px;
     width:20%;
-    height:60px;
+    height:78%;
     line-height: 60px;
     
     background-color: #95a5a6;
@@ -71,16 +71,3 @@ body{
 .arrow:active{
     background-color: #7f8c8d
 }
-/* 
-.imAclass {
-    color: green;
-}
-
-#box{
-    background-color: #1abc9c;
-    line-height:20px;
-    text-align:middle;
-    width: 150px;
-    padding: 20px;
-  } */
-
