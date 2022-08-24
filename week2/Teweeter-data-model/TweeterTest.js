@@ -46,6 +46,12 @@ $(document).ready(
       tweeterRendering.renderPosts(tweeter.getPosts())
       }
     })
+        
+    //listen on arrow:
+    $('#home-btn').on('click', function(e) {
+      e.preventDefault();
+      $('html, body').animate({scrollTop:0}, '300');
+    })
 
   }
 )
