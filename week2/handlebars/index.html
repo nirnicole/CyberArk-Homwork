@@ -26,10 +26,40 @@
   </head>
   <body>
     <div class="items"></div>
+
+    <script id="first-template" type="text/x-handlebars-template">
+
+
+      My text:
+      {{text}}
+    </script>
+
+    <div id="normal">Regular HTML Stuff</div>
+
+    <script id="second-template" type="text/x-handlebars-template">
+
+
+      My HB text:
+      {{moreText}}
+    </script>
+
+    <p id="special"></p>
+
+    <script id="third-template" type="text/x-handlebars-template">
+
+
+      My own text:
+      {{#each animalsData}}
+        <li>{{this}}</li>
+      {{/each}}
+    </script>
+
+    <ul id="thirdP"></ul>
     <script
       src="https://code.jquery.com/jquery-3.3.1.js"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript" src="multipleTemplates.js"></script>
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
