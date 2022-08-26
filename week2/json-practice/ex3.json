@@ -1,0 +1,19 @@
+{ "animales" :
+    [{
+    "name": "cow",
+    "weight": ["300kg", "0.3ton"]
+},
+{
+    "name": "elephant",
+    "weight": ["300kg", "0.3ton"]
+},
+{
+    "name": "gray wolf",
+    "weight": ["300kg", "0.3ton"]
+},
+{
+    "name": "quirrel",
+    "weight": ["300kg", "0.3ton"]
+}
+]
+}

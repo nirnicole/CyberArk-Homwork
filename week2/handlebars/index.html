@@ -1,0 +1,35 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+
+    <!-- <script id="store-template" type="text/x-handlebars-template">
+        <p>
+        <span> {{item}} </span>
+        -
+        <span>{{price}} Dollars </span>
+      </p>
+    </script> -->
+    <script id="show-data" type="text/x-handlebars-template">
+      <ul>
+        {{#each classmates}}
+          {{#if socialNetwork}}
+            <li>{{name}}: {{description}}</li>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="items"></div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
