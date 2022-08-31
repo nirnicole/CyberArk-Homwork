@@ -1,0 +1,9 @@
+cheetsheet steps:
+node init                   //(inside root project directory, creates the package json)
+npm install <package name>
+npm install -g <package name>   // installs the package globally, BAD PRACTICE
+
+
+notes:
+<*> IMPORTENT - we dont want to push all of the node modules to our git!
+so we open a ".gitignore" file and specify what to ignor.
