@@ -1,0 +1,14 @@
+{
+  "name": "jest",
+  "version": "1.0.0",
+  "description": "cheetsheet steps:\r node init                   //(inside root project directory, creates the package json)\r npm install <package name>\r npm install -g <package name>   // installs the package globally, BAD PRACTICE",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.0.1"
+  }
+}
