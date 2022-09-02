@@ -39,3 +39,29 @@ test(`validate should recive an array and return {error: "Need at least one bool
   //test valid
   expect(ex4.validate(arrValidTrue)).toBeTruthy()
 })
+
+test("checks whether push has been used in add method", () => {
+  const ex4 = new Exercises()
+
+  const spyOnAdd = jest.spyOn(ex4, "add") //creating a spying object on 'add' method, not neccesery
+  const spyOnPush = jest.spyOn(Array.prototype, "push") //creating the spying object for push, that actually belong to Array.prototype.
+  const isAdding = ex4.add(1, 2) //envocing a mock call to the add method, so we can spy on its behaviour
+
+  expect(spyOnAdd).toHaveBeenCalled() //just to verify we are calling add method, not neccesery
+  expect(spyOnPush).toHaveBeenCalled() //tracking push is called at least 1 time
+})
+
+//special test, checks whether push has been used in add method
+// describe("add", () => {
+//   test("checks whether push has been used in add method", () => {
+//     const push = jest.fn()
+//     add("a", "b")
+//     expect(push).toHaveBeenCalled()
+//   })
+
+//   test("does not drink something octopus-flavoured", () => {
+//     const drink = jest.fn()
+//     drinkAll(drink, "octopus")
+//     expect(drink).not.toHaveBeenCalled()
+//   })
+// })

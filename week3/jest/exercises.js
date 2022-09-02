@@ -32,6 +32,11 @@ class Exercises {
       return truthArr.length > falsehArr.length
     }
   }
+
+  add(x, y) {
+    let stuff = []
+    stuff.push(x, y)
+  }
 }
 
 module.exports = Exercises
