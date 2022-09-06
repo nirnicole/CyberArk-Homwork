@@ -1,0 +1,20 @@
+//when we create a project, initilize locally
+git init		
+
+//change the remote to main and than push (from the cmd)
+git remote add origin ${URLforGITHUBrepo}
+git branch -M main
+git push -u origin main	//set the origin
+
+
+//than for every push from the cmd (OR USE THE VSCODE INTERFACE)
+git add .
+git commit -m "message"
+git push
+
+//USE THE VSCODE INTERFACE, from the vscode source section by staging, commit and than push.
+
+
+//adding git ignore (IMPORTANT)
+1. create a file called ".gitignore" iniside your project.
+2. add into it the folder names which you want the staging(commits) to ignore.
