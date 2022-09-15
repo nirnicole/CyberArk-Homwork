@@ -14,10 +14,7 @@ class YouTubeLessonManager:
     def get(self, lesson_name):
         self.counter[lesson_name] = self.counter.get(lesson_name, 0)+1
         lesson_name = self.replace_panctuation(lesson_name.lower(), ' ')
-        results = []
-        for name, value in self.lessons.items():
-            if lesson_name in name:
-                results.append("https://www.youtube.com/watch?v=" + value)
+        results = [("https://www.youtube.com/watch?v=" + value) for name,value in self.lessons.items() if lesson_name in name]
         return results[0] if len(results) == 1 else results
 
 
@@ -26,7 +23,7 @@ class YouTubeLessonManager:
 
     def replace_panctuation(self, word, char):
         bad_chars = [',','-',':','.']
-        return "".join([c if (c not in bad_chars) else char for c in word])
+        return "".join([c for c in word if (c not in bad_chars)])
     
     def get_most_popular_lesson(self):
         max = 0

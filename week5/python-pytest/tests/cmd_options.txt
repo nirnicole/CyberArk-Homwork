@@ -1,0 +1,9 @@
+To run all the tests from all the files in folder tests_folder:
+pytest tests_folder/ 
+
+To run all the tests in a specific file:
+pytest my_test.py 
+
+What if we want to run a specific test within a file?
+To run a specific test add ::test_name :
+pytest my_test.py::test_get_name 
