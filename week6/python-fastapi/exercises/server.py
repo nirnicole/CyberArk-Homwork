@@ -33,7 +33,7 @@ def get_text():
 #ex2:
 @app.get("/item/{name}")
 async def get_price(name):
-    return next(({"price": x["price"]} for x in store if x["name"] == name), {"price": None})
+    return next(({"price": item["price"]} for item in store if item["name"] == name), {"price": None})
 
 #ex4:
 @app.get("/buy/optionalParameters")
@@ -49,8 +49,6 @@ async def buy_item(item):
 #ex6:
 @app.get("/sale")
 async def buy_item(admin):
-    print("hello")
-    sale = 1
     if admin != None and bool(admin.lower()):
         sale = 0.5     
         for item in store:
