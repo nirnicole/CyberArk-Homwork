@@ -54,7 +54,6 @@ async def buy_item(admin):
         for item in store:
             if item["inventory"] > 10:
                 item["price"]*=sale
-        
         return store
 
 
