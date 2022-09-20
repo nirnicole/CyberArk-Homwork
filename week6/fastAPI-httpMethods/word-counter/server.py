@@ -15,10 +15,8 @@ wordCounter = {
 
 @total_ordering
 class Wrapper:
-    def __init__(self, object={}):
-        print(list(object.items()))
-        items = list(object.items())[0]
-        self.key, self.val = items[0], items[1]
+    def __init__(self, items={}):
+        self.key, self.val = items[0], items[1] 
     def __lt__(self, other):
         return self.val > other.val
  
@@ -39,26 +37,30 @@ def get_word(word):
     
 @app.get('/most-used')
 def get_word():
-    most_used = {}
-    max = 0
-    for key, value in wordCounter.items():
-        if value > max:
-            most_used = {key: value}
-    return most_used
-    # res = heapq.heappop(get_most_common(5))
-    # return res.key, res.value
+    # most_used = {}
+    # max = 0
+    # for key, value in wordCounter.items():
+    #     if value > max:
+    #         most_used = {key: value}
+    # return most_used
+    res = heapq.heappop(get_most_common(1))
+    return {res.key: res.val}
+    
+@app.get('/top-5')
+def get_top():
+    results = get_most_common(5)
+    return {"rankings",results}
 
-# def get_most_common(size=5):
-#     # Creating empty heap
-#     heap = wordCounter.items()[
-#     print("list:")
-#     print(heap)
-#     wrapper_heap = list(map(lambda item: Wrapper(item), heap))
-#     heapq.heapify(wrapper_heap)
-#     max_item = heapq.heappop(wrapper_heap)
-#     print("hi")
-#     print(max_item.key)
-#     return wrapper_heap
+def get_most_common(size=5):
+    # Creating empty heap
+    heap = list(wordCounter.items())
+    wrapper_heap = list(map(lambda item: Wrapper(item), heap))
+    heapq.heapify(wrapper_heap)
+    res = []
+    size = size if size<len(wordCounter) else len(wordCounter)
+    for i in range(size):
+        res.append(heapq.heappop(wrapper_heap))
+    return res
  
 
 @app.post('/add/', status_code=201)
@@ -95,6 +97,14 @@ def inc_word(word):
 def ignore_special_chars(word):
     my_regex = re.compile(r"[a-z]", re.IGNORECASE)
     return "".join(re.findall(r"[a-z]", word))
+
+@app.get('/word-count')
+def total_words():
+    sum = 0 
+    for key, value in wordCounter.items():
+        sum = sum + value
+    return {"total",value}
+
 
 if __name__ == "__main__":
     uvicorn.run("server:app", host="0.0.0.0", port=8000, reload=True)
