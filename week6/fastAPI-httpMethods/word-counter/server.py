@@ -95,7 +95,6 @@ def inc_word(word):
     return wordCounter[word]
 
 def ignore_special_chars(word):
-    my_regex = re.compile(r"[a-z]", re.IGNORECASE)
     return "".join(re.findall(r"[a-z]", word))
 
 @app.get('/word-count')
