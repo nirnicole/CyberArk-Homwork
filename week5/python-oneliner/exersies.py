@@ -50,7 +50,8 @@ print(number_of_all_spaces(test_str))
 
 # ex9: Largest Lexicographically
 def largest_lexicographically(sentence):
-    return sorted(("".join(sentence.split("."))).split(), reverse=True)[0]
+    # return sorted(("".join(sentence.split("."))).split(), reverse=True)[0]
+    return max(sentence.replace('.',' ').split())
 
 print(largest_lexicographically("Imagination is .more important than knowledge."))
 
