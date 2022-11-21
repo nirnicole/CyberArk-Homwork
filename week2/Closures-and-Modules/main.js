@@ -2,15 +2,15 @@
 
 // const setCounter = function (num) {
 //     let counter = 0
-  
+
 //     const count = function () {
 //       counter += num;
 //       console.log(counter)
 //     }
-  
+
 //     return count
 //   }
-  
+
 //   const increment = setCounter(2)
 //   increment()
 //   increment()
@@ -94,7 +94,7 @@
 
 // const StringFormatter = function(){
 
-//     const capitalizeFirst = str => console.log(str.charAt(0).toUpperCase()+str.slice(1).toLowerCase()) 
+//     const capitalizeFirst = str => console.log(str.charAt(0).toUpperCase()+str.slice(1).toLowerCase())
 //     const skewerCase = str => console.log(str.split(/[ ,]+/).join('-'))
 
 //     return {
@@ -115,8 +115,6 @@
 //     const deposit = cash => money+=cash
 //     const showBalance = ()=> console.log(money)
 
-
-
 //     return {
 //         deposit: deposit,
 //         showBalance: showBalance
@@ -128,29 +126,58 @@
 // bank.deposit(250)
 // bank.showBalance() //should print 950
 
-const SongsManager = function(){
+// const SongsManager = function () {
+// 	const songs = {}
 
-    const songs = {}
+// 	const addSong = function (songName, url) {
+// 		//brake the url
+// 		const parsedURL = url.split("=")[1]
+// 		songs[songName] = parsedURL
+// 	}
 
-    const addSong = function(songName, url){
-        //brake the url
-        const parsedURL = url.split('=')[1]
-        songs[songName] = parsedURL
-    }
+// 	const getSong = (songName) =>
+// 		console.log(`https://www.youtube.com/watch?v=${songs[songName]}`)
 
-    const getSong = songName => console.log(`https://www.youtube.com/watch?v=${songs[songName]}`)
+// 	return {
+// 		addSong: addSong,
+// 		getSong: getSong,
+// 	}
+// }
 
-    return {
-        addSong: addSong,
-        getSong: getSong
-    }
+// const songsManager = SongsManager()
+// songsManager.addSong("sax", "https://www.youtube.com/watch?v=3JZ4pnNtyxQ")
+// songsManager.addSong("how long", "https://www.youtube.com/watch?v=CwfoyVa980U")
+// songsManager.addSong("ain't me", "https://www.youtube.com/watch?v=D5drYkLiLI8")
+
+// songsManager.getSong("sax") // should print https://www.youtube.com/watch?v=3JZ4pnNtyxQ
+
+// console.log("dsfdsF")
+
+//modules:
+const riddle = function () {
+	let last_value = 0
+
+	const add = function (x) {
+		return x + last_value
+	}
+
+	return {
+		add: add,
+	}
 }
 
-const songsManager = SongsManager()
-songsManager.addSong("sax", "https://www.youtube.com/watch?v=3JZ4pnNtyxQ")
-songsManager.addSong("how long", "https://www.youtube.com/watch?v=CwfoyVa980U")
-songsManager.addSong("ain't me", "https://www.youtube.com/watch?v=D5drYkLiLI8")
+// const add = (function () {
+// 	let last_value = 0
 
-songsManager.getSong("sax")     // should print https://www.youtube.com/watch?v=3JZ4pnNtyxQ
+// 	return function exec_add(value) {
+// 		let res = last_value + value
+// 		last_value = value
+// 		return res
+// 	}
+// })()
 
-console.log("dsfdsF")
+// function add(value) {
+// 	let res = (this.last_value || 0) + value
+// 	this.last_value = value
+// 	return res
+// }
